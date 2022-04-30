@@ -1,0 +1,19 @@
+
+@use '/src/styles'; 
+
+.footer{
+    background-color: var(--purple) ;
+    width: 100vw;
+    height: 12vh;
+
+    ul{
+        li{
+            color: var(--f1);
+            font-family: var(--mff);
+            font-size: 20px;
+            list-style-type: none;
+            text-align: center;
+            padding-top: 12px;
+        }
+    }
+}
