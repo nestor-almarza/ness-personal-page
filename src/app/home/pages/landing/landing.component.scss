@@ -1,0 +1,93 @@
+
+@use '/src/styles'; 
+
+*{
+    box-sizing: border-box;
+  }
+
+
+html, body{
+  font-family: var(--mff);
+  color: var(--f1);
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--purple);
+  font-size: 14px;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrap{
+  perspective-origin: 50% 50%;
+}
+
+.page{
+  z-index: 5;
+  margin: 3%;
+  max-width:790px;
+  margin-left:auto;
+  margin-right: auto;
+  padding: 30px;
+  border-radius: 3px;
+  text-align:center;
+  font-size: 1.4vw;
+  word-wrap: break-word;
+  h2{
+    font-weight: bold;
+    font-size: 6.5vw;
+    font-weight: 900;
+    font-style: italic;
+    color:var(--f1Title);
+    text-align: center; 
+  }
+  p{
+    padding-bottom: 6vh;
+    inline-size: 80%;
+    text-align: center; 
+    margin: auto;
+  }
+}
+
+.svg{
+  stroke:var(--green);
+  position:absolute;
+  bottom: -100vh;
+  transform-style: preserve-3d;
+  fill: var(--green);
+}
+
+$total: 10;
+@for $i from 1 through $total {
+  $scale:random(2) - .4;
+  
+  .svg:nth-child(#{$i}){
+    left:random(120) * 1% - 20;
+    animation: raise#{$i} 6 + random(15) +s linear infinite;
+    animation-delay:random(5) - 5 + s;
+    transform: scale(.2 * $i - .6) rotate(random(360) + deg);
+   // z-index: $i - 7;
+   z-index:  $i - $i  ;
+
+    @keyframes raise#{$i} {
+      0% {
+        left: 0;
+        @if $i / 2 != 0 {
+            filter: blur(7 + px);
+          } 
+          @else{
+          }
+      }
+      60% {
+        filter: blur(0 + px);}
+      to{
+       bottom:150vh;
+       transform: scale(.3 * $i - .6) rotate(random(360) + deg);
+       filter: blur(0 + px);
+      }
+    }
+  }
+}
+

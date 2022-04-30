@@ -1,0 +1,28 @@
+
+@use '/src/styles'; 
+
+
+nav{
+    background-color: var(--purple);
+    ul{
+       display: flexbox;
+       padding-top: 15px;
+       display: flex;
+       justify-content: right;
+       padding-right: 15vw;
+
+        li{
+            list-style-type: none;
+            color: var(--f1Title);
+            font-family: var(--mff);
+            font-size: 1.6rem;
+            padding: 2rem;
+            margin: 15px;
+            a{
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    }
+}
+

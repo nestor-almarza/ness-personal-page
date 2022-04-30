@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  :root {
+       /*  COLORS  */
+    --green: #7ceaa4;
+    --purple: #410e31;
+    --f1: rgba(172, 170, 190, 1);
+    --f1Title: #dad8ec;
+    /*  FONTS  */
+    --mff: 'Playfair Display', serif;
+    /* FONT SIZE */
+    --mfs: 14px
+  }
